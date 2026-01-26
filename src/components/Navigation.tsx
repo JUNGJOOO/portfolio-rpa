@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { label: "홈", path: "/" },
@@ -34,6 +35,7 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
+            <ThemeToggle />
           </div>
         </div>
       </div>
