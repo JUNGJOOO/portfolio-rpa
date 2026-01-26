@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import heroImage from "@/assets/hero-robot.png";
-import { ArrowRight, Cpu, FileText, Play, User, Mail, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Cpu, FileText, Play } from "lucide-react";
 
 const techStacks = [
   { category: "자동화", items: ["Python", "Selenium", "Playwright", "UiPath"] },
@@ -56,89 +56,33 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Profile Section */}
+      {/* Tech Stack Section */}
       <section className="py-20 border-t border-border/30">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Profile Info */}
-              <div className="animate-slide-up">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 rounded-full bg-surface-elevated">
-                    <User className="w-6 h-6 text-silver" />
-                  </div>
-                  <h2 className="text-3xl font-display font-bold text-gradient">About Me</h2>
-                </div>
-                
-                <div className="card-glass rounded-xl p-8">
-                  <h3 className="text-2xl font-semibold mb-2">홍길동</h3>
-                  <p className="text-silver mb-4">RPA Developer & Automation Engineer</p>
-                  
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    5년차 RPA 개발자로서 업무 자동화 솔루션을 설계하고 구현합니다. 
-                    반복적인 업무를 자동화하여 생산성을 높이고, 인적 오류를 줄이는 것을 목표로 합니다.
-                    Python과 다양한 자동화 도구를 활용하여 웹 스크래핑, 문서 자동화, 
-                    데이터 파이프라인 구축 등의 프로젝트를 수행해왔습니다.
-                  </p>
-
-                  {/* Contact Links */}
-                  <div className="flex items-center gap-4">
-                    <a
-                      href="mailto:example@email.com"
-                      className="p-3 rounded-lg bg-surface-elevated hover:bg-accent transition-colors"
-                      aria-label="Email"
-                    >
-                      <Mail className="w-5 h-5 text-silver hover:text-foreground transition-colors" />
-                    </a>
-                    <a
-                      href="https://github.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-lg bg-surface-elevated hover:bg-accent transition-colors"
-                      aria-label="GitHub"
-                    >
-                      <Github className="w-5 h-5 text-silver hover:text-foreground transition-colors" />
-                    </a>
-                    <a
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-lg bg-surface-elevated hover:bg-accent transition-colors"
-                      aria-label="LinkedIn"
-                    >
-                      <Linkedin className="w-5 h-5 text-silver hover:text-foreground transition-colors" />
-                    </a>
-                  </div>
-                </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-10 animate-fade-in">
+              <div className="p-3 rounded-full bg-surface-elevated">
+                <Cpu className="w-6 h-6 text-silver" />
               </div>
+              <h2 className="text-3xl font-display font-bold text-gradient">Tech Stack</h2>
+            </div>
 
-              {/* Tech Stack */}
-              <div className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 rounded-full bg-surface-elevated">
-                    <Cpu className="w-6 h-6 text-silver" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+              {techStacks.map((stack) => (
+                <div key={stack.category} className="card-glass rounded-xl p-5">
+                  <h4 className="text-sm font-medium text-silver mb-3">{stack.category}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {stack.items.map((item) => (
+                      <span
+                        key={item}
+                        className="px-3 py-1.5 text-sm rounded-lg bg-surface-elevated border border-border/50 text-foreground hover:border-silver/50 transition-colors"
+                      >
+                        {item}
+                      </span>
+                    ))}
                   </div>
-                  <h2 className="text-3xl font-display font-bold text-gradient">Tech Stack</h2>
                 </div>
-
-                <div className="space-y-4">
-                  {techStacks.map((stack) => (
-                    <div key={stack.category} className="card-glass rounded-xl p-5">
-                      <h4 className="text-sm font-medium text-silver mb-3">{stack.category}</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {stack.items.map((item) => (
-                          <span
-                            key={item}
-                            className="px-3 py-1.5 text-sm rounded-lg bg-surface-elevated border border-border/50 text-foreground hover:border-silver/50 transition-colors"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
