@@ -1,47 +1,49 @@
 import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
-import { ExternalLink, FileText, BookOpen, Code, Wrench, Lightbulb } from "lucide-react";
+import { ExternalLink, BookOpen, Code, Wrench, Lightbulb } from "lucide-react";
 
 const notionLinks = [
   {
     id: 1,
-    title: "시작하기",
+    title: "프로젝트 개요",
+    description: "AUTO RPA 프로젝트 소개 및 목표",
     icon: BookOpen,
-    docs: [
-      { title: "프로젝트 개요", description: "AUTO RPA 프로젝트 소개 및 목표", url: "https://notion.so/your-page-1" },
-      { title: "환경 설정", description: "개발 환경 구성 가이드", url: "https://notion.so/your-page-2" },
-      { title: "퀵 스타트", description: "빠른 시작을 위한 튜토리얼", url: "https://notion.so/your-page-3" },
-    ],
+    url: "https://notion.so/your-page-1",
   },
   {
     id: 2,
-    title: "아키텍처",
+    title: "환경 설정",
+    description: "개발 환경 구성 가이드",
     icon: Code,
-    docs: [
-      { title: "시스템 구조", description: "전체 시스템 아키텍처 설명", url: "https://notion.so/your-page-4" },
-      { title: "데이터 흐름", description: "데이터 파이프라인 구조", url: "https://notion.so/your-page-5" },
-      { title: "보안 설계", description: "보안 고려사항 및 구현", url: "https://notion.so/your-page-6" },
-    ],
+    url: "https://notion.so/your-page-2",
   },
   {
     id: 3,
-    title: "구현 가이드",
+    title: "시스템 구조",
+    description: "전체 시스템 아키텍처 설명",
     icon: Wrench,
-    docs: [
-      { title: "웹 스크래핑 모듈", description: "데이터 수집 모듈 상세 설명", url: "https://notion.so/your-page-7" },
-      { title: "문서 자동화", description: "문서 생성 및 처리 가이드", url: "https://notion.so/your-page-8" },
-      { title: "API 연동", description: "외부 서비스 연동 방법", url: "https://notion.so/your-page-9" },
-    ],
+    url: "https://notion.so/your-page-3",
   },
   {
     id: 4,
+    title: "데이터 흐름",
+    description: "데이터 파이프라인 구조",
+    icon: Code,
+    url: "https://notion.so/your-page-4",
+  },
+  {
+    id: 5,
+    title: "웹 스크래핑 모듈",
+    description: "데이터 수집 모듈 상세 설명",
+    icon: Wrench,
+    url: "https://notion.so/your-page-5",
+  },
+  {
+    id: 6,
     title: "모범 사례",
+    description: "효율적인 자동화 구현 팁",
     icon: Lightbulb,
-    docs: [
-      { title: "에러 처리 전략", description: "안정적인 자동화를 위한 예외 처리", url: "https://notion.so/your-page-10" },
-      { title: "성능 최적화", description: "효율적인 자동화 구현 팁", url: "https://notion.so/your-page-11" },
-      { title: "유지보수 가이드", description: "장기 운영을 위한 관리 방법", url: "https://notion.so/your-page-12" },
-    ],
+    url: "https://notion.so/your-page-6",
   },
 ];
 
@@ -55,59 +57,39 @@ export default function Docs() {
             subtitle="Notion에서 상세한 기술 문서와 가이드를 확인하세요"
           />
 
-          <div className="max-w-4xl mx-auto space-y-8">
-            {notionLinks.map((category, categoryIndex) => (
-              <div
-                key={category.id}
-                className="animate-slide-up"
-                style={{ animationDelay: `${categoryIndex * 0.1}s` }}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {notionLinks.map((doc, index) => (
+              <a
+                key={doc.id}
+                href={doc.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group card-glass hover-glow rounded-xl overflow-hidden animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Category Header */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-surface-elevated">
-                    <category.icon className="w-5 h-5 text-silver" />
+                {/* Icon Area */}
+                <div className="relative aspect-[16/9] bg-surface-elevated overflow-hidden flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-foreground/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-foreground/20 group-hover:scale-110 transition-all duration-300">
+                    <doc.icon className="w-7 h-7 text-silver" />
                   </div>
-                  <h2 className="text-xl font-semibold">{category.title}</h2>
+                  
+                  {/* External Link Badge */}
+                  <div className="absolute top-3 right-3 p-2 rounded-lg bg-background/80 backdrop-blur-sm">
+                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                  </div>
                 </div>
 
-                {/* Documents List */}
-                <div className="card-glass rounded-xl overflow-hidden">
-                  {category.docs.map((doc, docIndex) => (
-                    <a
-                      key={doc.title}
-                      href={doc.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`group flex items-center justify-between p-5 hover:bg-surface-elevated/50 transition-colors ${
-                        docIndex !== category.docs.length - 1 ? "border-b border-border/50" : ""
-                      }`}
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="p-2 rounded-lg bg-surface-glass">
-                          <FileText className="w-4 h-4 text-muted-foreground" />
-                        </div>
-                        <div>
-                          <h3 className="font-medium mb-1 group-hover:text-gradient transition-all">
-                            {doc.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground">
-                            {doc.description}
-                          </p>
-                        </div>
-                      </div>
-                      <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-foreground group-hover:scale-110 transition-all" />
-                    </a>
-                  ))}
+                {/* Content */}
+                <div className="p-5">
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-gradient transition-all line-clamp-1">
+                    {doc.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">
+                    {doc.description}
+                  </p>
                 </div>
-              </div>
+              </a>
             ))}
-
-            {/* Notion Info */}
-            <div className="card-glass rounded-xl p-6 text-center animate-fade-in">
-              <p className="text-muted-foreground">
-                모든 문서는 Notion에서 관리됩니다. 클릭하면 해당 Notion 페이지로 이동합니다.
-              </p>
-            </div>
           </div>
         </div>
       </section>
