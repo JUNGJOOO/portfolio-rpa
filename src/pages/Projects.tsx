@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ExternalLink, Github } from "lucide-react";
-
 const projects = [
   {
     id: 1,
@@ -45,9 +45,10 @@ export default function Projects() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {projects.map((project, index) => (
-              <div
+              <Link
+                to={`/projects/${project.id}`}
                 key={project.id}
-                className="card-glass hover-glow rounded-xl p-8 animate-slide-up"
+                className="card-glass hover-glow rounded-xl p-8 animate-slide-up block transition-transform hover:scale-[1.02]"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start justify-between mb-4">
@@ -63,12 +64,12 @@ export default function Projects() {
                     {project.status}
                   </span>
                   <div className="flex gap-2">
-                    <button className="p-2 rounded-lg bg-surface-elevated text-muted-foreground hover:text-foreground transition-colors">
+                    <span className="p-2 rounded-lg bg-surface-elevated text-muted-foreground hover:text-foreground transition-colors">
                       <Github className="w-4 h-4" />
-                    </button>
-                    <button className="p-2 rounded-lg bg-surface-elevated text-muted-foreground hover:text-foreground transition-colors">
+                    </span>
+                    <span className="p-2 rounded-lg bg-surface-elevated text-muted-foreground hover:text-foreground transition-colors">
                       <ExternalLink className="w-4 h-4" />
-                    </button>
+                    </span>
                   </div>
                 </div>
 
@@ -87,7 +88,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
