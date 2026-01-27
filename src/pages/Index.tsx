@@ -27,25 +27,33 @@ const Index = () => {
               <SplineViewer />
             </div>
 
-            {/* Navigation Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 w-full max-w-4xl animate-slide-up" style={{ animationDelay: "0.3s" }}>
+            {/* Hero Text */}
+            <div className="mt-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <h1 className="text-3xl md:text-4xl font-display font-bold text-gradient mb-2">
+                내일의 업무 방식을 설계합니다.
+              </h1>
+              <p className="text-lg text-muted-foreground">이정주 포트폴리오</p>
+            </div>
+
+            {/* Featured Projects */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 w-full max-w-4xl animate-slide-up" style={{ animationDelay: "0.3s" }}>
               <NavCard
-                to="/projects"
+                to="/projects/1"
                 icon={<Cpu className="w-6 h-6" />}
-                title="프로젝트"
-                description="자동화 프로젝트 살펴보기"
+                title="자동 데이터 수집 시스템"
+                description="웹 스크래핑 기반 자동화 파이프라인"
               />
               <NavCard
-                to="/demos"
-                icon={<Play className="w-6 h-6" />}
-                title="시연영상"
-                description="실제 작동 영상 확인"
-              />
-              <NavCard
-                to="/docs"
+                to="/projects/2"
                 icon={<FileText className="w-6 h-6" />}
-                title="기술문서"
-                description="상세 기술 문서 보기"
+                title="문서 자동화 봇"
+                description="엑셀/PDF 문서 자동 생성 솔루션"
+              />
+              <NavCard
+                to="/projects/3"
+                icon={<Play className="w-6 h-6" />}
+                title="실시간 모니터링 대시보드"
+                description="프로세스 상태 모니터링 시스템"
               />
             </div>
           </div>

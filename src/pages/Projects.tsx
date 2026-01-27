@@ -51,18 +51,7 @@ export default function Projects() {
                 className="card-glass hover-glow rounded-xl p-8 animate-slide-up block transition-transform hover:scale-[1.02]"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-start justify-between mb-4">
-                  <span
-                    className={`text-xs font-medium px-3 py-1 rounded-full ${
-                      project.status === "완료"
-                        ? "bg-green-500/20 text-green-400"
-                        : project.status === "진행중"
-                        ? "bg-yellow-500/20 text-yellow-400"
-                        : "bg-blue-500/20 text-blue-400"
-                    }`}
-                  >
-                    {project.status}
-                  </span>
+                <div className="flex items-start justify-end mb-4">
                   <div className="flex gap-2">
                     <span className="p-2 rounded-lg bg-surface-elevated text-muted-foreground hover:text-foreground transition-colors">
                       <Github className="w-4 h-4" />
