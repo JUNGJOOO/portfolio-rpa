@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
-import heroImage from "@/assets/hero-robot.png";
+import { SplineViewer } from "@/components/SplineViewer";
 import { ArrowRight, Cpu, FileText, Play } from "lucide-react";
 
 const techStacks = [
@@ -22,13 +22,9 @@ const Index = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center text-center">
-            {/* Hero Image with embedded text */}
-            <div className="relative w-full max-w-5xl animate-fade-in">
-              <img
-                src={heroImage}
-                alt="AUTO RPA Robot"
-                className="w-full h-auto"
-              />
+            {/* Spline 3D Viewer */}
+            <div className="relative w-full flex justify-center animate-fade-in">
+              <SplineViewer />
             </div>
 
             {/* Navigation Cards */}
