@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
-import { ArrowLeft, Github, ExternalLink, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Calendar, Tag, Play, FileText, Package } from "lucide-react";
 
 const projects = [
   {
@@ -17,8 +17,10 @@ const projects = [
     • 스케줄러를 통한 주기적 실행
     • 에러 핸들링 및 재시도 로직`,
     tags: ["Python", "Selenium", "MongoDB"],
-    status: "완료",
     date: "2024.01 - 2024.03",
+    demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    docsUrl: "https://notion.so/example-docs-1",
+    deliverables: ["자동화 스크립트", "데이터 파이프라인", "모니터링 대시보드"],
   },
   {
     id: 2,
@@ -33,8 +35,10 @@ const projects = [
     • 템플릿 기반 문서 생성
     • 작업 로그 및 이력 관리`,
     tags: ["UiPath", "VBA", "Outlook API"],
-    status: "완료",
     date: "2023.10 - 2023.12",
+    demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    docsUrl: "https://notion.so/example-docs-2",
+    deliverables: ["UiPath 워크플로우", "VBA 매크로", "문서 템플릿"],
   },
   {
     id: 3,
@@ -50,8 +54,10 @@ const projects = [
     • 성능 지표 시각화
     • 이력 조회 및 분석`,
     tags: ["React", "Node.js", "WebSocket"],
-    status: "진행중",
     date: "2024.06 - 현재",
+    demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    docsUrl: "https://notion.so/example-docs-3",
+    deliverables: ["React 대시보드", "Node.js API 서버", "알림 시스템"],
   },
   {
     id: 4,
@@ -67,8 +73,10 @@ const projects = [
     • 예측 모델 학습 및 배포
     • 대시보드 연동`,
     tags: ["TensorFlow", "Python", "Kafka"],
-    status: "계획중",
     date: "2024.09 - 예정",
+    demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    docsUrl: "https://notion.so/example-docs-4",
+    deliverables: ["ML 모델", "Kafka 스트림 처리기", "예측 API"],
   },
 ];
 
@@ -107,18 +115,7 @@ export default function ProjectDetail() {
 
             {/* Header */}
             <div className="card-glass rounded-xl p-8 mb-8 animate-fade-in">
-              <div className="flex items-start justify-between mb-6">
-                <span
-                  className={`text-xs font-medium px-3 py-1 rounded-full ${
-                    project.status === "완료"
-                      ? "bg-green-500/20 text-green-400"
-                      : project.status === "진행중"
-                      ? "bg-yellow-500/20 text-yellow-400"
-                      : "bg-blue-500/20 text-blue-400"
-                  }`}
-                >
-                  {project.status}
-                </span>
+              <div className="flex items-end justify-end mb-6">
                 <div className="flex gap-2">
                   <button className="p-2 rounded-lg bg-surface-elevated text-muted-foreground hover:text-foreground transition-colors">
                     <Github className="w-5 h-5" />
@@ -163,6 +160,66 @@ export default function ProjectDetail() {
               <h2 className="text-xl font-semibold mb-4">프로젝트 상세</h2>
               <div className="text-muted-foreground whitespace-pre-line leading-relaxed">
                 {project.fullDescription}
+              </div>
+            </div>
+
+            {/* Demo Video Section */}
+            <div className="card-glass rounded-xl p-8 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 rounded-lg bg-surface-elevated">
+                  <Play className="w-5 h-5 text-silver" />
+                </div>
+                <h2 className="text-xl font-semibold">프로젝트 시연영상</h2>
+              </div>
+              <div className="aspect-video rounded-lg overflow-hidden bg-surface-elevated">
+                <iframe
+                  src={project.demoVideo}
+                  title="프로젝트 시연영상"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            {/* Technical Documentation Section */}
+            <div className="card-glass rounded-xl p-8 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 rounded-lg bg-surface-elevated">
+                  <FileText className="w-5 h-5 text-silver" />
+                </div>
+                <h2 className="text-xl font-semibold">상세 기술 문서</h2>
+              </div>
+              <a
+                href={project.docsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-4 rounded-lg bg-surface-elevated hover:bg-surface-glass transition-colors group"
+              >
+                <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                  Notion에서 상세 기술 문서 확인하기
+                </span>
+                <ExternalLink className="w-4 h-4 text-silver-dim group-hover:text-silver transition-colors" />
+              </a>
+            </div>
+
+            {/* Deliverables Section */}
+            <div className="card-glass rounded-xl p-8 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 rounded-lg bg-surface-elevated">
+                  <Package className="w-5 h-5 text-silver" />
+                </div>
+                <h2 className="text-xl font-semibold">프로젝트 결과물</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {project.deliverables.map((item, index) => (
+                  <div
+                    key={index}
+                    className="p-4 rounded-lg bg-surface-elevated text-center"
+                  >
+                    <span className="text-muted-foreground">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
