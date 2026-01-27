@@ -22,17 +22,17 @@ const Index = () => {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center text-center">
-            {/* Spline 3D Viewer */}
-            <div className="relative w-full flex justify-center animate-fade-in">
-              <SplineViewer />
-            </div>
-
-            {/* Hero Text */}
-            <div className="mt-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            {/* Hero Text - Above 3D Model */}
+            <div className="animate-fade-in mb-4">
               <h1 className="text-3xl md:text-4xl font-display font-bold text-gradient mb-2">
-                내일의 업무 방식을 설계합니다.
+                내일의 업무 방식을 설계합니다
               </h1>
               <p className="text-lg text-muted-foreground">이정주 포트폴리오</p>
+            </div>
+
+            {/* Spline 3D Viewer */}
+            <div className="relative w-full flex justify-center animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <SplineViewer />
             </div>
 
             {/* Featured Projects */}

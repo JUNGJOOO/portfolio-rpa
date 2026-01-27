@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
-import { ArrowLeft, Github, ExternalLink, Calendar, Tag, Play, FileText, Package } from "lucide-react";
+import { ArrowLeft, Calendar, Tag, Play, FileText, Package, ExternalLink } from "lucide-react";
 
 const projects = [
   {
@@ -20,7 +20,11 @@ const projects = [
     date: "2024.01 - 2024.03",
     demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     docsUrl: "https://notion.so/example-docs-1",
-    deliverables: ["자동화 스크립트", "데이터 파이프라인", "모니터링 대시보드"],
+    deliverables: [
+      { name: "대시보드", url: "https://example.com/dashboard" },
+      { name: "구글시트", url: "https://docs.google.com/spreadsheets" },
+      { name: "엑셀파일", url: "https://example.com/excel" },
+    ],
   },
   {
     id: 2,
@@ -38,7 +42,11 @@ const projects = [
     date: "2023.10 - 2023.12",
     demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     docsUrl: "https://notion.so/example-docs-2",
-    deliverables: ["UiPath 워크플로우", "VBA 매크로", "문서 템플릿"],
+    deliverables: [
+      { name: "UiPath 워크플로우", url: "https://example.com/uipath" },
+      { name: "VBA 매크로", url: "https://example.com/vba" },
+      { name: "문서 템플릿", url: "https://example.com/template" },
+    ],
   },
   {
     id: 3,
@@ -57,7 +65,11 @@ const projects = [
     date: "2024.06 - 현재",
     demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     docsUrl: "https://notion.so/example-docs-3",
-    deliverables: ["React 대시보드", "Node.js API 서버", "알림 시스템"],
+    deliverables: [
+      { name: "React 대시보드", url: "https://example.com/react-dashboard" },
+      { name: "Node.js API 서버", url: "https://example.com/nodejs-api" },
+      { name: "알림 시스템", url: "https://example.com/notification" },
+    ],
   },
   {
     id: 4,
@@ -76,7 +88,11 @@ const projects = [
     date: "2024.09 - 예정",
     demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     docsUrl: "https://notion.so/example-docs-4",
-    deliverables: ["ML 모델", "Kafka 스트림 처리기", "예측 API"],
+    deliverables: [
+      { name: "ML 모델", url: "https://example.com/ml-model" },
+      { name: "Kafka 스트림 처리기", url: "https://example.com/kafka" },
+      { name: "예측 API", url: "https://example.com/predict-api" },
+    ],
   },
 ];
 
@@ -115,20 +131,20 @@ export default function ProjectDetail() {
 
             {/* Header */}
             <div className="card-glass rounded-xl p-8 mb-8 animate-fade-in">
-              <div className="flex items-end justify-end mb-6">
-                <div className="flex gap-2">
-                  <button className="p-2 rounded-lg bg-surface-elevated text-muted-foreground hover:text-foreground transition-colors">
-                    <Github className="w-5 h-5" />
-                  </button>
-                  <button className="p-2 rounded-lg bg-surface-elevated text-muted-foreground hover:text-foreground transition-colors">
-                    <ExternalLink className="w-5 h-5" />
-                  </button>
-                </div>
+              <div className="flex items-center justify-between mb-6">
+                <h1 className="text-3xl md:text-4xl font-display font-bold text-gradient">
+                  {project.title}
+                </h1>
+                <a
+                  href={project.docsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-elevated hover:bg-surface-glass text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <FileText className="w-5 h-5" />
+                  <span className="text-sm font-medium">Notion</span>
+                </a>
               </div>
-
-              <h1 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gradient">
-                {project.title}
-              </h1>
               
               <p className="text-lg text-muted-foreground mb-6">
                 {project.description}
@@ -211,14 +227,26 @@ export default function ProjectDetail() {
                 </div>
                 <h2 className="text-xl font-semibold">프로젝트 결과물</h2>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {project.deliverables.map((item, index) => (
-                  <div
+                  <a
                     key={index}
-                    className="p-4 rounded-lg bg-surface-elevated text-center"
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative rounded-lg bg-surface-elevated overflow-hidden block"
                   >
-                    <span className="text-muted-foreground">{item}</span>
-                  </div>
+                    <div className="aspect-video bg-surface-glass flex items-center justify-center">
+                      <span className="text-4xl text-muted-foreground">📊</span>
+                    </div>
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-[rgba(0,0,0,0.6)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <ExternalLink className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="p-4 text-center">
+                      <span className="text-muted-foreground group-hover:text-foreground transition-colors">{item.name}</span>
+                    </div>
+                  </a>
                 ))}
               </div>
             </div>
