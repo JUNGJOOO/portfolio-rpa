@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://jungjooo.github.io/portfolio-rpa",
+  "homepage":  "https://jungjooo.github.io/portfolio-rpa",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
