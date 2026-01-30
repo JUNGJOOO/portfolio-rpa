@@ -4,7 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolio-showcase/',
+  base: '/portfolio-rpa/',
   test: {
     environment: "jsdom",
     globals: true,
