@@ -52,27 +52,27 @@ export default function Profile() {
       <main className="container mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-16">
         <PageHeader 
           title="프로필" 
-          subtitle="RPA 개발자를 꿈꾸는 홍길동입니다"
+          subtitle=""
         />
 
         <div className="max-w-4xl mx-auto space-y-12">
           {/* 자기소개 섹션 */}
           <section className="card-glass rounded-2xl p-6 md:p-8 animate-fade-in">
-            <h2 className="text-2xl font-display font-bold text-foreground mb-6">
-              자기소개
+            <h2 className="text-lg md:text-xl font-semibold text-foreground mb-6">
+              안녕하세요. RPA 개발자에 지원하는 이정주입니다.
             </h2>
-            <p className="text-lg md:text-xl font-semibold text-foreground mb-6">
-              안녕하세요. RPA 개발자에 지원하는 <span className="text-gradient">홍길동</span>입니다.
-            </p>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                저는 적극적인 자세와 도전정신으로 삶을 개척하며 성장해왔습니다. 진로를 결정할 때 저의 적성과 성향을 고려하여 전공을 선택하고, 그 분야에서 지식을 강화했습니다. 이후 웹퍼블리셔에 대한 관심이 생기자, 망설이지 않고 해당 분야로 진출하여 다양한 경험을 쌓았습니다. 이러한 과정들을 통해 효율적으로 시간을 보내며 자신의 길을 찾아갔고, 앞으로도 적극적으로 성과를 내며 성장할 것입니다.
+                웹 퍼블리셔 경력을 쌓으며 수백 페이지의 반복적인 코드 수정 작업을 하면서 자연스럽게 '자동화'에 대한 필요성을 느꼈습니다. 그러던 중 RPA라는 분야를 알게 되었고, 이 기술이 단순 반복 업무를 넘어 API 연동, 데이터 처리, 프로세스 최적화까지 가능하다는 점에서 큰 매력을 느꼈습니다.
               </p>
               <p>
-                또한, 저는 세밀한 관찰력과 상대방을 이해하려는 성격을 가지고 있습니다. 사소한 부분까지 놓치지 않으며, 대학과 업무에서 디테일을 통해 차별화된 성과를 이뤄냈습니다. 포용력과 유연한 사고로 사람들과 원만한 관계를 유지하며 갈등을 최소화했습니다.
+                RPA 교육을 수료하며 UiPath & Power Automate를 기반으로 다양한 자동화 프로젝트를 진행했습니다. 외부 API를 연동한 블루리본 평가 분석 시스템, REFramework 기반의 티켓랭킹 데이터 수집 자동화 등 가상 시나리오 기반 프로젝트 솔루션들을 구현했습니다. 또한 Google Sheets를 활용한 대시보드 사이트 구축을 통해 자동화 데이터를 효과적으로 시각화하는 경험도 쌓았습니다.
               </p>
               <p>
-                다만, 자신에게 엄격한 성격으로 예민해질 때가 있어 이를 극복하기 위해 스스로를 격려하고 긍정적인 면에 집중하려 노력하고 있습니다. 저는 기업의 가치와 목표에 공감하며 의미 있는 일을 하고자 합니다. 웹퍼블리셔로서 능력을 인정받아 회사 성장에 기여하고, 입사 후에는 팀원들과 협력하여 유기적으로 성과를 창출하며 빠르게 핵심 인재로 자리잡겠습니다.
+                웹 퍼블리싱 경력을 통해 기획자, 디자이너, 개발자 사이에서 요구사항을 정확히 이해하고 조율하는 능력을 길렀으며, 300여 개 사이트를 단독으로 관리하며 책임감과 문제 해결 능력을 키웠습니다. 이러한 경험은 RPA 개발자로서 업무 프로세스를 이해하고 최적의 자동화 솔루션을 제안하는 데 강점이 될 것입니다.
+              </p>
+              <p>
+                새로운 분야에 대한 도전이지만, 다년간의 실무 경험에서 쌓은 적응력과 문제 해결 능력을 바탕으로 빠르게 성장하며 팀에 기여하는 실무형 RPA 개발자가 되겠습니다.
               </p>
             </div>
           </section>
@@ -87,21 +87,21 @@ export default function Profile() {
                 <Phone className="w-5 h-5 text-muted-foreground" />
                 <div>
                   <p className="text-sm text-muted-foreground">휴대폰</p>
-                  <p className="text-foreground font-medium">010-0000-0000</p>
+                  <p className="text-foreground font-medium">010-2736-6771</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 bg-surface-elevated rounded-xl">
                 <Mail className="w-5 h-5 text-muted-foreground" />
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="text-foreground font-medium">abcd@gmail.com</p>
+                  <p className="text-foreground font-medium">jjeeell48@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 bg-surface-elevated rounded-xl">
                 <MapPin className="w-5 h-5 text-muted-foreground" />
                 <div>
                   <p className="text-sm text-muted-foreground">주소</p>
-                  <p className="text-foreground font-medium">서울시 중구 항동</p>
+                  <p className="text-foreground font-medium">서울시 구로구 항동</p>
                 </div>
               </div>
             </div>
@@ -137,17 +137,19 @@ export default function Profile() {
               <Award className="w-6 h-6" />
               자격증
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-4">
               {certificationData.map((cert, index) => (
                 <div 
                   key={index}
-                  className="flex flex-col gap-1 p-4 bg-surface-elevated rounded-xl"
+                  className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 p-4 bg-surface-elevated rounded-xl"
                 >
-                  <span className="text-sm text-muted-foreground font-mono">
+                  <span className="text-sm text-muted-foreground font-mono min-w-[140px]">
                     {cert.date}
                   </span>
-                  <p className="text-foreground font-medium">{cert.title}</p>
-                  <p className="text-sm text-muted-foreground">{cert.institution}</p>
+                  <div className="flex-1">
+                    <p className="text-foreground font-medium">{cert.title}</p>
+                    <p className="text-sm text-muted-foreground">{cert.institution}</p>
+                  </div>
                 </div>
               ))}
             </div>

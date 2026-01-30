@@ -4,10 +4,10 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} AUTO RPA. All rights reserved.
+            © {new Date().getFullYear()} JJ. All rights reserved.
           </p>
           <p className="text-sm text-silver-dim">
-            Design by <span className="text-silver">홍길동</span>
+            Designed & built by JJ<span className="text-silver"></span>
           </p>
         </div>
       </div>

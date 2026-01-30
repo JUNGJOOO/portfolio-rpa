@@ -1,97 +1,109 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
-import { ArrowLeft, Calendar, Tag, Play, FileText, Package, ExternalLink } from "lucide-react";
+import { ArrowLeft, Calendar, Tag, Play, FileText, Package, ExternalLink, User, BookOpen, Download, Eye} from "lucide-react";
+import * as images from '@/assets';
 
 const projects = [
   {
     id: 1,
-    title: "자동 데이터 수집 시스템",
-    description: "웹 스크래핑 기반의 자동화된 데이터 수집 및 정제 파이프라인",
-    fullDescription: `웹 스크래핑 기술을 활용하여 다양한 소스에서 데이터를 자동으로 수집하고, 
-    정제하여 분석 가능한 형태로 변환하는 파이프라인입니다. 
-    
-    주요 기능:
-    • 다중 웹사이트 동시 크롤링
-    • 데이터 정제 및 표준화
-    • MongoDB를 활용한 데이터 저장
-    • 스케줄러를 통한 주기적 실행
-    • 에러 핸들링 및 재시도 로직`,
-    tags: ["Python", "Selenium", "MongoDB"],
-    date: "2024.01 - 2024.03",
-    demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    docsUrl: "https://notion.so/example-docs-1",
+    title: "블루리본",
+    description: "블루리본의 전문가 평가, 대중 평가, 감성 분석을 통합하여 객관적 신뢰도 점수를 자동 산출하는 시스템 구축했습니다.",
+    fullDescription: `프로젝트 전체 과정과 기술 문서는 Notion 문서로 정리되어 있습니다.
+
+    • 프로젝트 개요
+    • As-is, To-be
+    • 프로세스 설계
+    • REFramework 아키텍처 상세
+    • 각 워크플로우별 상세 분석
+    • 프로젝트 결과물
+    • 트러블슈팅 & 해결 과정`,
+    tags: ["UiPath", "웹 스크래핑", "Kakao Maps API", "Naver Blog API", "Google NLP API", "Google Sheets 연동", "Excel/Mail 자동화"],
+    date: "2025.11.03 ~ 2025.11.27 (4주) → 2026.01.05~2026.01.16 (2주) : 리팩토링 및 안정화",
+    role: `개발자 : 이정주
+    기여도 : 100% (개인 프로젝트)
+    담당 : 기획, 설계, 개발, 테스트까지 전 과정 단독 진행
+    프로젝트 유형 : 가상 시나리오 기반 프로젝트
+    교육 과정: RPA 솔루션 개발자 양성과정 2~3차 프로젝트`,
+    demoVideo: "https://www.youtube.com/embed/G2S5LTyEDE0",
+    videoOrientation: "landscape", // 가로 영상
+    notionUrl: "https://www.notion.so/RPA-2e2f82deb2118005bd18ee2fc3e920e1?source=copy_link",
     deliverables: [
-      { name: "대시보드", url: "https://example.com/dashboard" },
-      { name: "구글시트", url: "https://docs.google.com/spreadsheets" },
-      { name: "엑셀파일", url: "https://example.com/excel" },
+      { name: "사이트", url: "https://example.com/dashboard", thumbnail: images.blue_deliverables1, type: "link" },
+      { name: "구글시트", url: "https://docs.google.com/spreadsheets/d/1xHtQ4daPwZtGesz9aHKlHEPi95tO4fQg77-swhZ_QrA/edit?usp=sharing", thumbnail: images.blue_deliverables2, type: "link" },
+      { name: "엑셀파일", url: "/files/블루리본_조회내역_2601.xlsx", thumbnail: images.blue_deliverables3, type: "download" }
     ],
   },
   {
     id: 2,
-    title: "문서 자동화 봇",
-    description: "엑셀 및 PDF 문서를 자동으로 생성하고 이메일 발송하는 RPA 솔루션",
-    fullDescription: `반복적인 문서 작업을 자동화하여 업무 효율성을 극대화하는 RPA 솔루션입니다.
-    
-    주요 기능:
-    • 엑셀 데이터 자동 처리 및 리포트 생성
-    • PDF 문서 자동 생성
-    • Outlook을 통한 자동 이메일 발송
-    • 템플릿 기반 문서 생성
-    • 작업 로그 및 이력 관리`,
-    tags: ["UiPath", "VBA", "Outlook API"],
-    date: "2023.10 - 2023.12",
-    demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    docsUrl: "https://notion.so/example-docs-2",
+    title: "티켓랭킹",
+    description: "티켓랭킹 데이터 자동 수집 및 가공 업무 자동화 시스템 구축했습니다.",
+    fullDescription: `프로젝트 전체 과정과 기술 문서는 Notion 문서로 정리되어 있습니다.
+
+    • 프로젝트 개요
+    • As-is, To-be
+    • 프로세스 설계
+    • REFramework 아키텍처 상세
+    • 각 워크플로우별 상세 분석
+    • 프로젝트 결과물`,
+    tags: ["UiPath", "웹 스크래핑", "Excel/Mail 자동화", "데이터 가공", "정규식"],
+    date: "2025.12.01 ~ 2025.12.05 (1주)",
+    role: `개발자 : 이정주
+    기여도 : 100% (개인 프로젝트)
+    담당 : 기획, 설계, 개발, 테스트까지 전 과정
+    프로젝트 유형 : 가상 시나리오 기반 프로젝트`,
+    demoVideo: "https://www.youtube.com/embed/3pogLgrxgjI",
+    videoOrientation: "portrait", // 세로 영상 (Shorts)
+    notionUrl: "https://www.notion.so/RPA-2ccf82deb21180618cacc8d93e8ad4e7?source=copy_link",
     deliverables: [
-      { name: "UiPath 워크플로우", url: "https://example.com/uipath" },
-      { name: "VBA 매크로", url: "https://example.com/vba" },
-      { name: "문서 템플릿", url: "https://example.com/template" },
+      { name: "결과 화면", url: images.ticket_email, thumbnail: images.ticket_email, type: "image" },
+      { name: "엑셀파일", url: "/files/티켓랭킹_20251213_이정주.xlsx", thumbnail: images.blue_deliverables3, type: "download" }
     ],
   },
   {
     id: 3,
-    title: "실시간 모니터링 대시보드",
-    description: "자동화 프로세스의 실시간 상태 모니터링 및 알림 시스템",
-    fullDescription: `자동화 프로세스의 실행 상태를 실시간으로 모니터링하고, 
-    이상 상황 발생 시 즉시 알림을 전송하는 대시보드입니다.
-    
-    주요 기능:
-    • 실시간 프로세스 상태 모니터링
-    • WebSocket 기반 실시간 데이터 업데이트
-    • 슬랙/이메일 알림 연동
-    • 성능 지표 시각화
-    • 이력 조회 및 분석`,
-    tags: ["React", "Node.js", "WebSocket"],
-    date: "2024.06 - 현재",
-    demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    docsUrl: "https://notion.so/example-docs-3",
+    title: "의약품 안전나라",
+    description: "의약품 행정처분 정보 모니터링 자동화를 통한 업무 효율화 및 신속하게 대응합니다.",
+    fullDescription: `프로젝트 전체 과정과 기술 문서는 Notion 문서로 정리되어 있습니다.
+
+    • 프로젝트 개요
+    • As-is, To-be
+    • 프로세스 설계
+    • REFramework 아키텍처 상세
+    • 각 워크플로우별 상세 분석
+    • 프로젝트 결과물`,
+    tags: ["UiPath", "웹 스크래핑", "Excel/Mail 자동화", "데이터 가공", "정규식"],
+    date: "2025.12.08 ~ 2025.12.12 (1주)",
+    role: `개발자 : 이정주
+    기여도 : 100% (개인 프로젝트)
+    담당 : 기획, 설계, 개발, 테스트까지 전 과정
+    프로젝트 유형 : 가상 시나리오 기반 프로젝트`,
+    demoVideo: "https://www.youtube.com/embed/ou7SnBa3R6I",
+    videoOrientation: "portrait", // 세로 영상 (Shorts)
+    notionUrl: "https://www.notion.so/RPA-2d8f82deb21180a8b8d4d8f909d5b4cd?source=copy_link",
     deliverables: [
-      { name: "React 대시보드", url: "https://example.com/react-dashboard" },
-      { name: "Node.js API 서버", url: "https://example.com/nodejs-api" },
-      { name: "알림 시스템", url: "https://example.com/notification" },
+      { name: "결과 화면", url: images.medicine_email, thumbnail: images.medicine_email, type: "image" },
+      { name: "엑셀파일", url: "/files/의약품_안전나라_20251213_이정주.xlsx", thumbnail: images.blue_deliverables3, type: "download" }
     ],
   },
   {
     id: 4,
-    title: "AI 기반 이상 탐지",
-    description: "머신러닝을 활용한 업무 프로세스 이상 패턴 자동 감지",
-    fullDescription: `머신러닝 알고리즘을 활용하여 업무 프로세스에서 발생하는 
-    이상 패턴을 자동으로 감지하고 대응하는 시스템입니다.
-    
-    주요 기능:
-    • 시계열 데이터 분석
-    • 이상 패턴 자동 감지
-    • 실시간 스트림 처리 (Kafka)
-    • 예측 모델 학습 및 배포
-    • 대시보드 연동`,
-    tags: ["TensorFlow", "Python", "Kafka"],
-    date: "2024.09 - 예정",
-    demoVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    docsUrl: "https://notion.so/example-docs-4",
+    title: "서울문화포털",
+    description: "웹 스크래핑 기반 서울문화포털의 기간·조건 필터 기반 검색 대시보드 구축했습니다.",
+    fullDescription: null,
+    tags: ["Power Automate", "FTP 업로드 자동화", "대시보드 페이지 구축"],
+    date: "2025.09.15 - 2025.10.01 (3주)",
+    role: `구성 : 4인 팀 프로젝트 (팀오토)
+    개발자 : 이정주
+    기여도 : 주요 기여 80% (핵심 담당)
+    담당 : 설계·개발·테스트 전반 주도
+    프로젝트 유형 : 가상 시나리오 기반 프로젝트
+    교육 과정 : RPA 솔루션 개발자 양성과정 1차 프로젝트`,
+    demoVideo: "https://www.youtube.com/embed/ZjqxeK2xXGk",
+    videoOrientation: "landscape", // 가로 영상
+    notionUrl: null,
     deliverables: [
-      { name: "ML 모델", url: "https://example.com/ml-model" },
-      { name: "Kafka 스트림 처리기", url: "https://example.com/kafka" },
-      { name: "예측 API", url: "https://example.com/predict-api" },
+      { name: "대시보드(카페24)", url: "https://rpajury.mycafe24.com/Project1/index.html", thumbnail: images.seoul_dashboard, type: "link" },
+      { name: "ftp업로드", url: images.seoul_ftp, thumbnail: images.seoul_ftp, type: "image" },
     ],
   },
 ];
@@ -121,50 +133,32 @@ export default function ProjectDetail() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             {/* Back Button */}
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 text-silver-dim hover:text-foreground transition-colors mb-8"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              프로젝트 목록
+            <Link to="/projects" className="inline-flex items-center gap-2 text-silver-dim hover:text-foreground transition-colors mb-8">
+              <ArrowLeft className="w-4 h-4" />프로젝트 목록
             </Link>
 
             {/* Header */}
             <div className="card-glass rounded-xl p-8 mb-8 animate-fade-in">
-              <div className="flex items-center justify-between mb-6">
-                <h1 className="text-3xl md:text-4xl font-display font-bold text-gradient">
-                  {project.title}
-                </h1>
-                <a
-                  href={project.docsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-elevated hover:bg-surface-glass text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <FileText className="w-5 h-5" />
-                  <span className="text-sm font-medium">Notion</span>
-                </a>
-              </div>
-              
-              <p className="text-lg text-muted-foreground mb-6">
+              <h1 className="text-3xl md:text-4xl mb-6 font-display font-bold">
+                {project.title}
+              </h1>
+              <p className="text-lg mb-6 text-foreground/60 tracking-tight">
                 {project.description}
               </p>
-
-              <div className="flex flex-wrap items-center gap-4 text-sm text-silver-dim">
+              <div className="flex text-foreground/60 flex-direction flex-col gap-3">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <span>{project.date}</span>
+                  <p>{project.date}</p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-normal gap-2 whitespace-pre-line leading-relaxed">
+                  <User className="w-4 h-4"/>
+                  <p>{project.role}</p>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
                   <Tag className="w-4 h-4" />
                   <div className="flex gap-2">
                     {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-0.5 rounded bg-surface-elevated text-silver-dim"
-                      >
-                        {tag}
-                      </span>
+                      <span key={tag} className="px-2 py-0.5 rounded bg-surface-elevated text-silver-dim">{tag}</span>
                     ))}
                   </div>
                 </div>
@@ -172,34 +166,108 @@ export default function ProjectDetail() {
             </div>
 
             {/* Content */}
-            <div className="card-glass rounded-xl p-8 animate-slide-up" style={{ animationDelay: "0.1s" }}>
-              <h2 className="text-xl font-semibold mb-4">프로젝트 상세</h2>
-              <div className="text-muted-foreground whitespace-pre-line leading-relaxed">
-                {project.fullDescription}
+            {/* 프로젝트 상세 있을때 없을때 */}
+            {project.fullDescription && (
+              <div className="card-glass rounded-xl p-8 mb-8 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="rounded-lg bg-surface-elevated">
+                    <BookOpen className="w-5 h-5 text-silver" />
+                  </div>
+                  <h2 className="text-xl font-semibold">프로젝트 상세</h2>
+                </div>
+                <div className="whitespace-pre-line leading-relaxed text-foreground/60">
+                  {project.fullDescription}
+                </div>
+                {project.notionUrl && (
+                  <a href={project.notionUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 mt-8 rounded-lg bg-[#39434c] hover:bg-[#0075de] transition-colors">
+                    <img src={images.icon_notion} alt="Notion 아이콘" className="w-10 h-10"/>
+                    <span className="text-m font-medium text-white">Notion으로 정리했어요!</span>
+                  </a>
+                )}
+              </div>
+            )}
+
+            {/* Deliverables Section */}
+            <div className="card-glass rounded-xl p-8 mb-8 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="rounded-lg bg-surface-elevated">
+                  <Package className="w-5 h-5 text-silver" />
+                </div>
+                <h2 className="text-xl font-semibold">프로젝트 결과물</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {project.deliverables.map((item, index) => {
+                  // 다운로드
+                  if (item.type === "download") {
+                    return (
+                      <a key={index} href={item.url} download className="group relative rounded-lg bg-surface-elevated overflow-hidden block">
+                        <div className="aspect-video bg-surface-glass flex items-center justify-center overflow-hidden">
+                          <img src={item.thumbnail} alt={item.name} className="w-full h-full object-cover"/>
+                        </div>
+                        <div className="absolute inset-0 bg-[rgba(0,0,0,0.6)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <Download className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="p-4 text-center">
+                          <span className="text-foreground/6060 tracking-wide group-hover:text-foreground transition-colors">{item.name}</span>
+                        </div>
+                      </a>
+                    );
+                  }
+                  
+                  // 이미지 보기
+                  if (item.type === "image") {
+                    return (
+                      <a key={index} href={item.url} target="_blank" rel="noopener noreferrer" className="group relative rounded-lg bg-surface-elevated overflow-hidden block">
+                        <div className="aspect-video bg-surface-glass flex items-center justify-center overflow-hidden">
+                          <img src={item.thumbnail} alt={item.name} className="w-full h-full object-cover"/>
+                        </div>
+                        <div className="absolute inset-0 bg-[rgba(0,0,0,0.6)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <Eye className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="p-4 text-center">
+                          <span className="text-foreground/60 tracking-wide group-hover:text-foreground transition-colors">{item.name}</span>
+                        </div>
+                      </a>
+                    );
+                  }
+                  
+                  // 링크
+                  return (
+                    <a key={index} href={item.url} target="_blank" rel="noopener noreferrer" className="group relative rounded-lg bg-surface-elevated overflow-hidden block">
+                      <div className="aspect-video bg-surface-glass flex items-center justify-center overflow-hidden">
+                        <img src={item.thumbnail} alt={item.name} className="w-full h-full object-cover"/>
+                      </div>
+                      <div className="absolute inset-0 bg-[rgba(0,0,0,0.6)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <ExternalLink className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="p-4 text-center">
+                        <span className="text-foreground/60 tracking-wide group-hover:text-foreground transition-colors">{item.name}</span>
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
             </div>
 
             {/* Demo Video Section */}
-            <div className="card-glass rounded-xl p-8 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+            <div className="card-glass rounded-xl p-8 mb-8 animate-slide-up" style={{ animationDelay: "0.2s" }}>
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 rounded-lg bg-surface-elevated">
+                <div className="rounded-lg bg-surface-elevated">
                   <Play className="w-5 h-5 text-silver" />
                 </div>
-                <h2 className="text-xl font-semibold">프로젝트 시연영상</h2>
+                <h2 className="text-xl font-semibold">프로젝트 요약영상</h2>
               </div>
-              <div className="aspect-video rounded-lg overflow-hidden bg-surface-elevated">
-                <iframe
-                  src={project.demoVideo}
-                  title="프로젝트 시연영상"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+              <div className={`rounded-lg overflow-hidden bg-surface-elevated flex justify-center ${
+                project.videoOrientation === 'portrait' 
+                  ? 'aspect-[9/16] max-w-md mx-auto' 
+                  : 'aspect-video'
+              }`}>
+                <iframe src={project.demoVideo} title="프로젝트 요약영상" className="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
               </div>
             </div>
 
             {/* Technical Documentation Section */}
-            <div className="card-glass rounded-xl p-8 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+            {/* <div className="card-glass rounded-xl p-8 mb-8 animate-slide-up" style={{ animationDelay: "0.3s" }}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 rounded-lg bg-surface-elevated">
                   <FileText className="w-5 h-5 text-silver" />
@@ -207,7 +275,7 @@ export default function ProjectDetail() {
                 <h2 className="text-xl font-semibold">상세 기술 문서</h2>
               </div>
               <a
-                href={project.docsUrl}
+                href={project.notionUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-4 rounded-lg bg-surface-elevated hover:bg-surface-glass transition-colors group"
@@ -217,39 +285,9 @@ export default function ProjectDetail() {
                 </span>
                 <ExternalLink className="w-4 h-4 text-silver-dim group-hover:text-silver transition-colors" />
               </a>
-            </div>
+            </div> */}
 
-            {/* Deliverables Section */}
-            <div className="card-glass rounded-xl p-8 animate-slide-up" style={{ animationDelay: "0.4s" }}>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 rounded-lg bg-surface-elevated">
-                  <Package className="w-5 h-5 text-silver" />
-                </div>
-                <h2 className="text-xl font-semibold">프로젝트 결과물</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {project.deliverables.map((item, index) => (
-                  <a
-                    key={index}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative rounded-lg bg-surface-elevated overflow-hidden block"
-                  >
-                    <div className="aspect-video bg-surface-glass flex items-center justify-center">
-                      <span className="text-4xl text-muted-foreground">📊</span>
-                    </div>
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-[rgba(0,0,0,0.6)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <ExternalLink className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="p-4 text-center">
-                      <span className="text-muted-foreground group-hover:text-foreground transition-colors">{item.name}</span>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>

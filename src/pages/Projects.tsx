@@ -5,30 +5,49 @@ import { ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "자동 데이터 수집 시스템",
-    description: "웹 스크래핑 기반의 자동화된 데이터 수집 및 정제 파이프라인",
-    tags: ["Python", "Selenium", "MongoDB"],
+    title: "블루리본",
+    description: "블루리본의 전문가 평가, 대중 평가, 감성 분석을 통합하여 객관적 신뢰도 점수를 자동 산출하는 시스템 구축했습니다.",
+    tags: [
+      { name: "UiPath", color: "bg-blue-500/20 text-blue-400" },
+      { name: "API", color: "bg-surface-elevated text-silver-dim" },
+      { name: "Google Sheets 연동", color: "bg-surface-elevated text-silver-dim" },
+      { name: "Excel/Mail 자동화", color: "bg-surface-elevated text-silver-dim" },
+    ],
     status: "완료",
   },
   {
     id: 2,
-    title: "문서 자동화 봇",
-    description: "엑셀 및 PDF 문서를 자동으로 생성하고 이메일 발송하는 RPA 솔루션",
-    tags: ["UiPath", "VBA", "Outlook API"],
+    title: "티켓랭킹",
+    description: "티켓랭킹 데이터 자동 수집 및 가공 업무 자동화 시스템 구축했습니다.",
+    tags: [
+      { name: "UiPath", color: "bg-blue-500/20 text-blue-400" },
+      { name: "스크래핑", color: "bg-surface-elevated text-silver-dim" },
+      { name: "Excel/Mail 자동화", color: "bg-surface-elevated text-silver-dim" },
+      { name: "데이터 가공", color: "bg-surface-elevated text-silver-dim" },
+    ],
     status: "완료",
   },
   {
     id: 3,
-    title: "실시간 모니터링 대시보드",
-    description: "자동화 프로세스의 실시간 상태 모니터링 및 알림 시스템",
-    tags: ["React", "Node.js", "WebSocket"],
+    title: "의약품 안전나라",
+    description: "의약품 행정처분 정보 모니터링 자동화를 통한 업무 효율화 및 신속하게 대응합니다.",
+    tags: [
+      { name: "UiPath", color: "bg-blue-500/20 text-blue-400" },
+      { name: "스크래핑", color: "bg-surface-elevated text-silver-dim" },
+      { name: "Excel/Mail 자동화", color: "bg-surface-elevated text-silver-dim" },
+      { name: "데이터 가공", color: "bg-surface-elevated text-silver-dim" },
+    ],
     status: "진행중",
   },
   {
     id: 4,
-    title: "AI 기반 이상 탐지",
-    description: "머신러닝을 활용한 업무 프로세스 이상 패턴 자동 감지",
-    tags: ["TensorFlow", "Python", "Kafka"],
+    title: "서울문화행사",
+    description: "웹 스크래핑 기반 서울문화행사의 기간·조건 필터 기반 검색 대시보드 구축했습니다.",
+    tags: [
+      { name: "Power Automate", color: "bg-green-500/20 text-green-400" },
+      { name: "FTP 업로드 자동화", color: "bg-surface-elevated text-silver-dim" },
+      { name: "대시보드 페이지", color: "bg-surface-elevated text-silver-dim" },
+    ],
     status: "계획중",
   },
 ];
@@ -38,20 +57,12 @@ export default function Projects() {
     <Layout>
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <PageHeader
-            title="프로젝트"
-            subtitle="자동화와 효율성을 추구하는 다양한 RPA 프로젝트들"
-          />
+          <PageHeader title="프로젝트" subtitle="가상 시나리오를 기반 RPA 역량 강화 프로젝트"/>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {projects.map((project, index) => (
-              <Link
-                to={`/projects/${project.id}`}
-                key={project.id}
-                className="card-glass hover-glow rounded-xl p-8 animate-slide-up block transition-transform hover:scale-[1.02]"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex items-start justify-end mb-4">
+              <Link to={`/projects/${project.id}`} key={project.id} className="card-glass hover-glow rounded-xl p-8 animate-slide-up block transition-transform hover:scale-[1.02]" style={{ animationDelay: `${index * 0.1}s` }}>
+                {/* <div className="flex items-start justify-end mb-4">
                   <div className="flex gap-2">
                     <span className="p-2 rounded-lg bg-surface-elevated text-muted-foreground hover:text-foreground transition-colors">
                       <Github className="w-4 h-4" />
@@ -60,7 +71,7 @@ export default function Projects() {
                       <ExternalLink className="w-4 h-4" />
                     </span>
                   </div>
-                </div>
+                </div> */}
 
                 <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -69,11 +80,8 @@ export default function Projects() {
 
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-3 py-1.5 rounded-lg bg-surface-elevated text-silver-dim"
-                    >
-                      {tag}
+                    <span key={tag.name} className={`text-xs px-3 py-1.5 rounded-lg ${tag.color}`}>
+                      {tag.name}
                     </span>
                   ))}
                 </div>

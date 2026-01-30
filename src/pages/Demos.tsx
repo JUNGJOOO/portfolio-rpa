@@ -1,56 +1,48 @@
 import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
-import { Play, Clock, Eye } from "lucide-react";
+import { Play, Clock, Eye, PlayCircle } from "lucide-react";
+import * as images from '@/assets';
 
 const demos = [
   {
     id: 1,
-    title: "데이터 수집 자동화 시연",
-    description: "웹사이트에서 데이터를 자동으로 수집하는 과정을 보여줍니다",
-    duration: "3:42",
-    views: "1.2K",
-    thumbnail: "/placeholder.svg",
+    title: "블루리본 전문가·대중 평가 교차 분석",
+    description: "블루리본의 전문가 평가, 대중 평가, 감성 분석을 통합하여 객관적 신뢰도 점수를 자동 산출하는 시스템 구축했습니다.",
+    duration: "1:56",
+    views: "1",
+    thumbnail: images.blue_thumbnail,
+    youtubeUrl: "https://youtu.be/G2S5LTyEDE0",
   },
   {
     id: 2,
-    title: "문서 생성 자동화",
-    description: "템플릿 기반 보고서 자동 생성 및 배포 프로세스",
-    duration: "5:15",
-    views: "892",
-    thumbnail: "/placeholder.svg",
+    title: "티켓랭킹",
+    description: "티켓랭킹 데이터 자동 수집 및 가공 업무 자동화 시스템 구축했습니다.",
+    duration: "1:02",
+    views: "1",
+    thumbnail: images.ticket_thumbnail,
+    youtubeUrl: "https://youtube.com/shorts/3pogLgrxgjI?feature=share",
+    imagePosition: 'object-top',  // ← 위쪽 정렬
   },
   {
     id: 3,
-    title: "이메일 자동 분류 시스템",
-    description: "AI를 활용한 이메일 자동 분류 및 응답 시스템",
-    duration: "4:28",
-    views: "756",
-    thumbnail: "/placeholder.svg",
+    title: "의약품 안전나라",
+    description: "의약품 행정처분 정보 모니터링 자동화를 통한 업무 효율화 및 신속하게 대응합니다.",
+    duration: "1:04",
+    views: "1",
+    thumbnail: images.medicine_thumbnail,
+    youtubeUrl: "https://youtube.com/shorts/ou7SnBa3R6I?feature=share",
+    imagePosition: 'object-top',  // ← 위쪽 정렬
   },
   {
     id: 4,
-    title: "실시간 모니터링 대시보드",
-    description: "자동화 프로세스 모니터링 화면 데모",
-    duration: "2:55",
-    views: "1.5K",
-    thumbnail: "/placeholder.svg",
+    title: "서울문화행사",
+    description: "웹 스크래핑 기반 서울문화행사의 기간·조건 필터 기반 검색 대시보드 구축했습니다.",
+    duration: "2:05",
+    views: "1",
+    thumbnail: images.seoul_thumbnail,
+    youtubeUrl: "https://youtu.be/ZjqxeK2xXGk",
   },
-  {
-    id: 5,
-    title: "에러 핸들링 및 복구",
-    description: "자동화 중 발생하는 예외 상황 처리 방법",
-    duration: "6:10",
-    views: "623",
-    thumbnail: "/placeholder.svg",
-  },
-  {
-    id: 6,
-    title: "스케줄링 및 트리거 설정",
-    description: "자동화 작업 스케줄 설정 및 이벤트 트리거 구성",
-    duration: "4:45",
-    views: "512",
-    thumbnail: "/placeholder.svg",
-  },
+  
 ];
 
 export default function Demos() {
@@ -58,26 +50,17 @@ export default function Demos() {
     <Layout>
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <PageHeader
-            title="시연영상"
-            subtitle="자동화 프로젝트의 실제 작동 과정을 확인하세요"
-          />
-
+          <PageHeader title="요약영상" subtitle="자동화 프로젝트의 실제 실행 흐름을 담은 요약영상을 확인하세요"/>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {demos.map((demo, index) => (
-              <div
-                key={demo.id}
-                className="group card-glass hover-glow rounded-xl overflow-hidden animate-slide-up cursor-pointer"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+              <a key={demo.id} href={demo.youtubeUrl} target="_blank" rel="noopener noreferrer" className="card-glass hover-glow rounded-xl overflow-hidden animate-slide-up cursor-pointer block" style={{ animationDelay: `${index * 0.1}s` }}>
                 {/* Thumbnail */}
                 <div className="relative aspect-video bg-surface-elevated overflow-hidden">
+                  {/* 썸네일 이미지 추가 */}
+                  <img src={demo.thumbnail} alt={demo.title}className={`w-full h-full object-cover ${demo.imagePosition || ''}`}/>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-foreground/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-foreground/20 group-hover:scale-110 transition-all duration-300">
-                      <Play className="w-6 h-6 text-foreground ml-1" />
-                    </div>
+                      <img src={images.icon_play} alt="로고" className="h-10" />
                   </div>
-                  
                   {/* Duration Badge */}
                   <div className="absolute bottom-3 right-3 px-2 py-1 rounded bg-background/80 backdrop-blur-sm text-xs font-medium">
                     {demo.duration}
@@ -85,7 +68,7 @@ export default function Demos() {
                 </div>
 
                 {/* Content */}
-                <div className="p-5">
+                <div className="p-5 border-t">
                   <h3 className="text-lg font-semibold mb-2 group-hover:text-gradient transition-all line-clamp-1">
                     {demo.title}
                   </h3>
@@ -104,9 +87,10 @@ export default function Demos() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
+
         </div>
       </section>
     </Layout>

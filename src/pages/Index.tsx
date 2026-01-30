@@ -9,9 +9,9 @@ const Index = () => {
       <Navigation />
       
       {/* Full Height Hero Section */}
-      <section className="flex-1 flex flex-col items-center justify-between pt-16 pb-4 md:pb-6 px-4 md:px-6 overflow-hidden">
+      <section className="flex-1 flex flex-col items-center justify-center pt-16 pb-4 md:pb-6 px-4 md:px-6 overflow-hidden">
         {/* Hero Text - Top */}
-        <div className="text-center pt-4 md:pt-6 lg:pt-8 animate-fade-in">
+        <div className="text-center animate-fade-in mt-10">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gradient mb-1 md:mb-2">
             내일의 업무 방식을 설계합니다
           </h1>
@@ -19,7 +19,7 @@ const Index = () => {
         </div>
 
         {/* Spline 3D Viewer - Center */}
-        <div className="flex-1 flex items-center justify-center w-full max-h-[35vh] sm:max-h-[40vh] md:max-h-[45vh] lg:max-h-[50vh] animate-fade-in" style={{ animationDelay: "0.1s" }}>
+        <div className="flex-1 flex items-center justify-center w-full max-h-[35vh] sm:max-h-[40vh] md:max-h-[45vh] lg:max-h-[60vh] animate-fade-in" style={{ animationDelay: "0.1s" }}>
           <SplineViewer />
         </div>
 
@@ -29,20 +29,20 @@ const Index = () => {
             <NavCard
               to="/projects/1"
               icon={<Cpu className="w-4 h-4 md:w-5 md:h-5" />}
-              title="자동 데이터 수집 시스템"
-              description="웹 스크래핑 기반 자동화 파이프라인"
+              title="블루리본"
+              description="교차분석을 통한 신뢰도 점수 산출/사이트 구축"
             />
             <NavCard
               to="/projects/2"
               icon={<FileText className="w-4 h-4 md:w-5 md:h-5" />}
-              title="문서 자동화 봇"
-              description="엑셀/PDF 문서 자동 생성 솔루션"
+              title="티켓랭킹"
+              description="웹 스크래핑 기반 자동화 엑셀/메일 자동생성"
             />
             <NavCard
               to="/projects/3"
               icon={<Play className="w-4 h-4 md:w-5 md:h-5" />}
-              title="실시간 모니터링 대시보드"
-              description="프로세스 상태 모니터링 시스템"
+              title="서울문화포털"
+              description="기간·조건 필터 기반 검색 대시보드 구축"
               className="sm:col-span-2 lg:col-span-1"
             />
           </div>
