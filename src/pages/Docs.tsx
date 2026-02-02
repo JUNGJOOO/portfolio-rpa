@@ -50,11 +50,7 @@ export default function Docs() {
                 {/* Icon Area */}
                 <div className="relative aspect-[16/9] bg-surface-elevated overflow-hidden flex items-center justify-center">
                   <div className="w-16 h-16 rounded-full bg-foreground/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-foreground/20 group-hover:scale-110 transition-all duration-300">
-                    {typeof doc.icon === 'string' ? (
-                      <img src={doc.icon} alt="icon" className="w-8 h-8" />
-                    ) : (
-                      <doc.icon className="w-7 h-7 text-silver" />
-                    )}
+                    <img src={doc.icon} alt="icon" className="w-8 h-8" />
                   </div>
                   
                   {/* External Link Badge */}
