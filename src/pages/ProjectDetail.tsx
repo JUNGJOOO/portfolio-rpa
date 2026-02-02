@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
-import { ArrowLeft, Calendar, Tag, Play, FileText, Package, ExternalLink, User, BookOpen, Download, Eye} from "lucide-react";
+import { ArrowLeft, Calendar, Tag, Play, FileText, Package, ExternalLink, User, BookOpen, Download, Eye, Github} from "lucide-react";
 import * as images from '@/assets';
 
 const projects = [
@@ -28,7 +28,7 @@ const projects = [
     videoOrientation: "landscape", // 가로 영상
     notionUrl: "https://www.notion.so/RPA-2e2f82deb2118005bd18ee2fc3e920e1?source=copy_link",
     deliverables: [
-      { name: "사이트", url: "https://example.com/dashboard", thumbnail: images.blue_deliverables1, type: "link" },
+      { name: "사이트(github)", url: "https://jungjooo.github.io/rpa-blueribbon", thumbnail: images.blue_deliverables1, type: "Github" },
       { name: "구글시트", url: "https://docs.google.com/spreadsheets/d/1xHtQ4daPwZtGesz9aHKlHEPi95tO4fQg77-swhZ_QrA/edit?usp=sharing", thumbnail: images.blue_deliverables2, type: "link" },
       { name: "엑셀파일", url: "/files/블루리본_조회내역_2601.xlsx", thumbnail: images.blue_deliverables3, type: "download" }
     ],
