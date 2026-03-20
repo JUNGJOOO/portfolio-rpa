@@ -16,3 +16,5 @@ export { default as medicine_thumbnail } from './medicine_thumbnail.jpg';
 export { default as seoul_ftp } from './seoul_ftp.png';
 export { default as seoul_dashboard } from './seoul_dashboard.png';
 export { default as seoul_thumbnail } from './seoul_thumbnail.jpg';
+
+export { default as weather_thumbnail } from './weather_thumbnail.jpg';

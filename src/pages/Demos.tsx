@@ -9,7 +9,7 @@ const demos = [
     title: "블루리본 전문가·대중 평가 교차 분석",
     description: "블루리본의 전문가 평가, 대중 평가, 감성 분석을 통합하여 객관적 신뢰도 점수를 자동 산출하는 시스템 구축했습니다.",
     duration: "1:56",
-    views: "1",
+    views: "23",
     thumbnail: images.blue_thumbnail,
     youtubeUrl: "https://youtu.be/G2S5LTyEDE0",
   },
@@ -18,7 +18,7 @@ const demos = [
     title: "티켓랭킹",
     description: "티켓랭킹 데이터 자동 수집 및 가공 업무 자동화 시스템 구축했습니다.",
     duration: "1:02",
-    views: "1",
+    views: "20",
     thumbnail: images.ticket_thumbnail,
     youtubeUrl: "https://youtube.com/shorts/3pogLgrxgjI?feature=share",
     imagePosition: 'object-top',  // ← 위쪽 정렬
@@ -28,7 +28,7 @@ const demos = [
     title: "의약품 안전나라",
     description: "의약품 행정처분 정보 모니터링 자동화를 통한 업무 효율화 및 신속하게 대응합니다.",
     duration: "1:04",
-    views: "1",
+    views: "15",
     thumbnail: images.medicine_thumbnail,
     youtubeUrl: "https://youtube.com/shorts/ou7SnBa3R6I?feature=share",
     imagePosition: 'object-top',  // ← 위쪽 정렬
@@ -38,11 +38,19 @@ const demos = [
     title: "서울문화행사",
     description: "웹 스크래핑 기반 서울문화행사의 기간·조건 필터 기반 검색 대시보드 구축했습니다.",
     duration: "2:05",
-    views: "1",
+    views: "16",
     thumbnail: images.seoul_thumbnail,
     youtubeUrl: "https://youtu.be/ZjqxeK2xXGk",
   },
-  
+  {
+    id: 5,
+    title: "날씨 브리핑",
+    description: "실제사용) 오전 7시에 자동 발송되는 구로구 1시간 단위 날씨 브리핑 자동화 시스템을 구축했습니다.",
+    duration: "0:53",
+    views: "2",
+    thumbnail: images.weather_thumbnail,
+    youtubeUrl: "https://youtu.be/sD3GvHjxJS4",
+  },
 ];
 
 export default function Demos() {
