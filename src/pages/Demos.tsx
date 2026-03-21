@@ -45,7 +45,7 @@ const demos = [
   {
     id: 5,
     title: "날씨 브리핑",
-    description: "실제사용] 오전 7시에 자동 발송되는 구로구 1시간 단위 날씨 브리핑 자동화 시스템을 구축했습니다.",
+    description: "[실제사용] 오전 7시에 자동 발송되는 구로구 1시간 단위 날씨 브리핑 자동화 시스템을 구축했습니다.",
     duration: "0:53",
     views: "2",
     thumbnail: images.weather_thumbnail,

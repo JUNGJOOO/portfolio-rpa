@@ -165,6 +165,23 @@ export default function ProjectDetail() {
               </div>
             </div>
 
+            {/* Demo Video Section */}
+            <div className="card-glass rounded-xl p-8 mb-8 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="rounded-lg bg-surface-elevated">
+                  <Play className="w-5 h-5 text-silver" />
+                </div>
+                <h2 className="text-xl font-semibold">프로젝트 요약영상</h2>
+              </div>
+              <div className={`rounded-lg overflow-hidden bg-surface-elevated flex justify-center ${
+                project.videoOrientation === 'portrait' 
+                  ? 'aspect-[9/16] max-w-md mx-auto' 
+                  : 'aspect-video'
+              }`}>
+                <iframe src={project.demoVideo} title="프로젝트 요약영상" className="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
+              </div>
+            </div>
+
             {/* Content */}
             {/* 프로젝트 상세 있을때 없을때 */}
             {project.fullDescription && (
@@ -246,23 +263,6 @@ export default function ProjectDetail() {
                     </a>
                   );
                 })}
-              </div>
-            </div>
-
-            {/* Demo Video Section */}
-            <div className="card-glass rounded-xl p-8 mb-8 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="rounded-lg bg-surface-elevated">
-                  <Play className="w-5 h-5 text-silver" />
-                </div>
-                <h2 className="text-xl font-semibold">프로젝트 요약영상</h2>
-              </div>
-              <div className={`rounded-lg overflow-hidden bg-surface-elevated flex justify-center ${
-                project.videoOrientation === 'portrait' 
-                  ? 'aspect-[9/16] max-w-md mx-auto' 
-                  : 'aspect-video'
-              }`}>
-                <iframe src={project.demoVideo} title="프로젝트 요약영상" className="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
               </div>
             </div>
 
