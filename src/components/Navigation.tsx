@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "홈", path: "/" },
-  { label: "프로필", path: "/profile" },
+  // { label: "프로필", path: "/profile" },
   { label: "프로젝트", path: "/projects" },
   { label: "기술문서", path: "/docs" },
   { label: "요약영상", path: "/demos" },
